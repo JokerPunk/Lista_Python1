@@ -1,0 +1,41 @@
+nome=[]
+nota=[]
+notas=0
+i=0
+j=0
+k=0
+l=0
+alunos=0
+repete = True
+resposta = ""
+while repete:
+    nome.append(input("Infome o nome do aluno:"))
+    nota.append(input("Infome a nota do aluno:"))
+    i+=1
+    resposta = input("Digite:\nS- Adiconar nota \nN- Parar prrenchimento\nopcao:")
+    resposta = resposta.upper()
+    alunos +=1
+    if resposta == "N":
+        repete = False
+    else:
+        repete = True
+print("Alunos cadastrados e suas notas:\n")
+while j != alunos:
+    print(nome[j] +":" + nota[j])
+    notas = notas + int(nota[j])
+    j+=1
+media = notas/alunos
+print("A Média dos alunos eh:" + str(media) )
+print("\nAPROVADOS\n")
+while k != alunos:
+    if int(nota[k])>=6:
+        print(nome[k] +":" + nota[k])
+    k+=1
+
+        
+
+print("\nREPROVADOS:\n")
+while l != alunos:
+    if int(nota[l])<6:
+        print(nome[l] +":" + nota[l])
+    l+=1
