@@ -1,0 +1,71 @@
+repete = True
+nota=[]
+j=0
+k=0
+soma=0
+notas=0
+acimamedia=0
+abaixosete=0
+while repete:
+    notav = int(input("\nInfome a nota:"))
+    if notav== -1:
+        repete =False
+    else:
+        nota.append(notav)
+        
+
+print("Infome a sua opção:\n")
+print("A.Quantidade de valores que foram lidos\n")
+print("B.Exibir todos os valores na ordem em que foram informados, um ao lado do outro\n")
+print("C.Exibir todos os valores na ordem inversa à que foram informados, um abaixo do outro\n")
+print("D.Soma dos valores\n")
+print("E.Média dos valores\n")
+print("F.Quantidade de valores acima da média calculada\n")
+print("G.Quantidade de valores abaixo de sete\n")
+print("H.Encerrar Programa\n")
+opcao = input("Opção:")
+opcao = opcao.upper()
+if opcao == "A":
+    print("\nA quantidade de valores lidos foi de:"+ str(len(nota)))
+if opcao =="B":
+    print("Notas na ordem cadastradas:\n")
+    print(str(nota))
+if opcao =="C":
+    nota.reverse()
+    print("Notas na ordem inversa:\n")
+    print(str(nota))
+if opcao =="D":
+    j=0
+    while j != len(nota):
+        soma +=nota[j]
+        j+=1
+    print("A soma das notas eh:" + str(soma))
+if opcao =="E":
+    j=0
+    while j != len(nota):
+        soma +=nota[j]
+        j+=1
+    media = soma/len(nota)
+    print("A Média das notas eh:" + str(media))
+if opcao =="F":
+    j=0
+    while j != len(nota):
+        soma +=nota[j]
+        j+=1
+    media = soma/len(nota)
+    while k != len(nota):
+        if nota[k] > media:
+            acimamedia+=1
+        k+=1
+            
+    print("O total de valores acima da média foi de:" + str(acimamedia))
+if opcao =="G":
+    while k != len(nota):
+        if nota[k] < 7:
+            abaixosete+=1
+        k+=1
+            
+    print("O total de valores abaixo de sete foi:" + str(abaixosete))
+if opcao == "H":
+    print("Programa encerrado!")
+    quit()
