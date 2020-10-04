@@ -1,0 +1,67 @@
+nome=[]
+num=[]
+par=[]
+r="s"
+p=str
+a=str
+nbusca=str
+lista=[[nome],[num],[par]]
+print("Seja bem vindo a central de cadastros!!")
+while(r=="s" or r=="S"):
+    nome.append(input("Digite o nome do candidato que quer cadastrar: "))
+    num.append(input("Entre com o numero do candidato: "))
+    par.append(input("Entre com o partido do candidato: "))
+    r=input("Deseja cadastrar outro candidato?: (digite S para sim e N para nao)")
+p=input("Voce deseja pesquisar por algum candidato?(digite 's' para sim e 'n' para não)")
+if (p=="S" or p=="s"):
+    pesquisa=input("Voce deseja pesquisar por qual dado?(1-Nome , 2-Numero , 3-Partido)")
+    busca=str
+    if (pesquisa=="1"):
+        busca=input("Qual o nome deseja buscar?")
+        for i in range (len(nome)):
+            if (busca==nome[i]):
+                print("os dados do candidato buscado sao: ")
+                print("Nome: ",nome[i])
+                print("Numero: ",num[i])
+                print("Partido: ",par[i])
+                break
+        if(busca!=nome[i]):
+            print("Nao foi possivel encontrar o nome no sistema!!")
+            i=len(nome)
+    elif (pesquisa=="2"):
+       busca=input("Qual o Numero deseja buscar?")
+       for i in range (len(num)):
+            if (busca==num[i]):
+                print("os dados do candidato buscado sao: ")
+                print("Nome: ",nome[i])
+                print("Numero: ",num[i])
+                print("Partido: ",par[i])
+                break
+    if(busca!=num[i]):
+            print("nao foi possivel encontrar o numero no sistema!!")
+            i=len(num)
+    elif (pesquisa=="3"):
+        busca=input("Qual o Partido deseja buscar?")
+        for i in range (len(par)):
+            if (busca==par[i]):
+                print("os dados do candidato buscado sao: ")
+                print("Nome: ",nome[i])
+                print("Numero: ",num[i])
+                print("Partido: ",par[i])
+                break
+        if(busca!=par[i]):
+            print("nao foi possivel encontrar o partido no sistema!!")
+            i=len(par)
+a=input("Voce deseja alterar o nome de algum candidato? (Digite S para sim e N para nao)")
+if (a=="S" or a=="s"):
+    nbusca=input("Qual o numero do candidato que voce deseja alterar o nome?")
+    for i in range (len(num)):
+        if (nbusca==num[i]):
+            nome[i]=input("Digite o novo nome: ")
+            break
+    if(nbusca!=num[i]):
+        print("nao foi possivel encontrar o numero no sistema!!")
+        i=len(num)
+print("Banco de dados: ")
+for i in range (len(lista)):
+    print("Candidato: ",nome[i],"- Numero: ",num[i],"- Partido: ",par[i])
